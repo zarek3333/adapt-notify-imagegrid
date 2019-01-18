@@ -1,17 +1,17 @@
 # adapt-notify-imagegrid
 
-**Notifyimagegrid** is a *presentation component* for the [Adapt framework](https://github.com/adaptlearning/adapt_framework) based on [adapt-hotgrid](https://github.com/cgkineo/adapt-hotgrid). It displays a set of images in a grid layout, but without interactivity. 
+This component is used to add images into a grid format using columns. Each image can have a title and more information in the form of the Notifier popping up.
 
-This can be useful for visual bullet lists where a set of labelled images is required but no further information necessary.
+---
 
-![imagegrid](https://raw.githubusercontent.com/chrisgillison/shared-assets/master/imagegrid.gif)   
+<img src="https://raw.githubusercontent.com/mike-st/adapt-notify-imagegrid/master/notify-imagegrid.gif" alt="Adapt Notify Image Grid Component" width="920" height="628" border="10" /> 
 
 ## Installation
 This component must be manually installed.
 
 ## Settings Overview
 
-The attributes listed below are used in *components.json* to configure **Notifyimagegrid**, and are properly formatted as JSON in [*example.json*](https://github.com/chrisgillison/adapt-imagegrid/blob/master/example.json). 
+The attributes listed below are used in *components.json* to configure **Notifyimagegrid**, and are properly formatted as JSON in [*example.json*](https://github.com/mike-st/adapt-notify-imagegrid/blob/master/example.json). 
 
 ### Attributes
 
@@ -24,6 +24,12 @@ The attributes listed below are used in *components.json* to configure **Notifyi
 **\_layout** (string): This defines the horizontal position of the component in the block. Acceptable values are `full`, `left` or `right`.
 
 **\_columns** (number): This value determines the number of columns within the grid. Any number of columns can be set however keep in mind the more columns there are the smaller the items will be.
+
+**\_reverseDirection** (number): This value determines reverses the direction of how the image grid displays.
+
+**\_constrainHeight** (string): This value constrains images to all the same height in the grid.
+
+**\_heightAmount** (number): This value adds a custom constrained height amount to each image in the grid.
 
 Notifyimagegrid has a dynamic layout system. If you have 5 items but set the columns to 3, notify-imagegrid will put 3 items in the first row and 2 on the second. The second row then will be automatically centred. This works with any amount of items and columns - ie that last row will always be centred for you.
 
