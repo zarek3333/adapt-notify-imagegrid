@@ -15,11 +15,11 @@ define([
 
         events: function() {
             return Adapt.device.touch == true ? {
-                'inview':                       'inview',
+                'inview': 'inview',
                 'click img' : 'gridnotifyPopup'
             } : {
-                'inview':                       'inview',
-                'click img' : 'gridnotifyPopup'
+                'inview': 'inview',
+                'mouseover img' : 'gridnotifyPopup'
             }
         },
 
