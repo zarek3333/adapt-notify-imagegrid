@@ -8,8 +8,8 @@
                 {{#each _items}}
                 <div class="notify-imagegrid-grid-item {{_itemClasses}}">
                     
-                    <div class="base notify-imagegrid-item-image" aria-label="{{#if _graphic.alt}} {{_graphic.alt}} {{/if}}{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}">
-                        <img src="{{_graphic.src}}" tabindex="0" />
+                    <div class="base notify-imagegrid-item-image">
+                        <img src="{{_graphic.src}}" tabindex="0" alt="{{#if _graphic.alt}} {{_graphic.alt}} {{/if}}{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}" />
                     </div>
 
                     {{#if _graphic.title}}
