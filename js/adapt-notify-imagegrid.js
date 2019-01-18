@@ -92,7 +92,7 @@ define([
         reverseDirection: function() {
 
             if (this.model.get('_reverseDirection') && this.model.get('_isEnabled')) {
-                this.$(".imagegrid-grid-inner").addClass("reverserow");
+                this.$(".notify-imagegrid-grid-inner").addClass("reverserow");
             }
         },
 
@@ -111,7 +111,7 @@ define([
             if (columns && Adapt.device.screenSize === 'large') {
                 var griditempercent = (100 / columns);
                 var gridminuspad = (5 / columns);
-                this.$('.imagegrid-grid-item').css('width', griditempercent + '%');
+                this.$('.notify-imagegrid-grid-item').css('width', griditempercent + '%');
             }
         },
 
