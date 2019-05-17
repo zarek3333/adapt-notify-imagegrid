@@ -7,7 +7,7 @@
 
                 {{#each _items}}
                 <div class="notify-imagegrid-grid-item {{_itemClasses}}">
-                    
+                    <div class="griddetails a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">********** [ IMAGE GRID ITEM CONTENT ] **********</div>
                     <div class="base notify-imagegrid-item-image">
                         <img src="{{_graphic.src}}" tabindex="0" alt="{{#if _graphic.alt}} {{_graphic.alt}} {{/if}}{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}" />
                     </div>
@@ -26,9 +26,13 @@
                         <script>
                             $( 'img[src="{{_graphic.src}}"]' ).addClass('img2click');
                             $( 'img[src="{{_graphic.src}}"]' ).on( 'click', function() {
-                                require('coreJS/adapt').trigger('notify:popup',{title:'{{{_graphic.title}}}',body:'{{{a11y_text _graphic.gridmessage}}}'});return false;
+                                var $gridmsg = "{{{_graphic.gridmessage}}}";
+                                require('coreJS/adapt').trigger('notify:popup',{title:'{{{_graphic.title}}}',body:$gridmsg });return false;
                             });
                         </script>
+                        <div class="notifydetails a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">Hotgraphic Notify Title: {{{_graphic.title}}}
+                          <div class="notifydetails a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">Hotgraphic Notify Body: {{{_graphic.gridmessage}}}</div>
+                        </div>
 
                     {{/if}}
 
