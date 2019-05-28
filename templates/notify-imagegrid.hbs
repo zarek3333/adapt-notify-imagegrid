@@ -7,7 +7,7 @@
 
                 {{#each _items}}
                 <div class="notify-imagegrid-grid-item {{_itemClasses}}">
-                    <div class="griddetails a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">********** [ IMAGE GRID ITEM CONTENT ] **********</div>
+                    <div class="{{../_id}}-fbnotify a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">********** [ IMAGE GRID ITEM CONTENT ] **********</div>
                     <div class="base notify-imagegrid-item-image">
                         <img src="{{_graphic.src}}" tabindex="0" alt="{{#if _graphic.alt}} {{_graphic.alt}} {{/if}}{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}" />
                     </div>
@@ -30,8 +30,8 @@
                                 require('coreJS/adapt').trigger('notify:popup',{title:'{{{_graphic.title}}}',body:$gridmsg });return false;
                             });
                         </script>
-                        <div class="notifydetails a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">Hotgraphic Notify Title: {{{_graphic.title}}}
-                          <div class="notifydetails a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">Hotgraphic Notify Body: {{{_graphic.gridmessage}}}</div>
+                        <div class="{{../_id}}-fbnotify a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">[ Image Grid Notify Title ] = {{{_graphic.title}}}
+                          <div class="{{../_id}}-fbnotify a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">[ Image Grid Notify Body ] = {{{_graphic.gridmessage}}}</div>
                         </div>
 
                     {{/if}}
@@ -57,3 +57,4 @@
     });
     </script>
 </div>
+<script class="{{_id}}-fbnotify">if ( !$('html').hasClass('pagesave2txt') ) { $( ".{{_id}}-fbnotify" ).remove(); }</script>
