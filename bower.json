@@ -1,7 +1,7 @@
 {
     "name": "adapt-notify-imagegrid",
     "repository": "git://github.com/mike-st/adapt-notify-imagegrid",
-    "version": "0.1.4",
+    "version": "0.1.5",
   	"framework": ">=2.0.9",
     "homepage": "https://github.com/mike-st/adapt-notify-imagegrid",
     "issues": "https://github.com/mike-st/adapt-notify-imagegrid/issues/",
