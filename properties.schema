@@ -93,14 +93,24 @@
                 "validators": [],
                 "translatable": true
               },
+              "imagecaption": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "title": "Under Image Caption",
+                "inputType": "Text",
+                "validators": [],
+                "help": "This is optional text which is displayed under the grid item image.",
+                "translatable": true
+              },
               "title": {
                 "type": "string",
                 "required": false,
                 "default": "",
-                "title": "Item Title",
+                "title": "Notify Title",
                 "inputType": "Text",
                 "validators": [],
-                "help": "This is optional text which is displayed under the grid item image.",
+                "help": "This is optional title for the Popup Notify Window",
                 "translatable": true
               },
               "gridmessage": {
