@@ -15,7 +15,7 @@
                     {{#if _graphic.title}}
                     <div class="notify-imagegrid-item-title">
                         <div class="notify-imagegrid-item-title-inner" {{#if _graphic.gridmessage}} {{else}}tabindex="0"{{/if}}>
-                            {{{_graphic.title}}}
+                            {{#if _graphic.imagecaption}} {{{_graphic.imagecaption}}} {{else}} {{{_graphic.title}}} {{/if}}
                         </div>
                     </div>
                     {{/if}}
