@@ -12,13 +12,11 @@
                         <img src="{{_graphic.src}}" tabindex="0" alt="{{#if _graphic.alt}} {{_graphic.alt}} {{/if}}{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}" />
                     </div>
 
-                    {{#if _graphic.title}}
                     <div class="notify-imagegrid-item-title">
                         <div class="notify-imagegrid-item-title-inner" {{#if _graphic.gridmessage}} {{else}}tabindex="0"{{/if}}>
                             {{#if _graphic.imagecaption}} {{{_graphic.imagecaption}}} {{else}} {{{_graphic.title}}} {{/if}}
                         </div>
                     </div>
-                    {{/if}}
 
                     {{#if _graphic.gridmessage}}
                     
