@@ -1,8 +1,9 @@
 
 define([
-    'core/js/adapt',
-    'core/js/views/componentView'
-], function(Adapt, ComponentView) {
+    'core/js/models/componentModel', // add this
+    'core/js/views/componentView', // change these to use proper paths
+    'core/js/adapt'
+], function(ComponentModel, ComponentView, Adapt) {
 
     var Notifyimagegrid = ComponentView.extend({
 
@@ -16,10 +17,10 @@ define([
         events: function() {
             return Adapt.device.touch == true ? {
                 'inview': 'inview',
-                'click img' : 'gridnotifyPopup'
+                'click button' : 'gridnotifyPopup'
             } : {
                 'inview': 'inview',
-                'mouseover img' : 'gridnotifyPopup'
+                'mouseover button' : 'gridnotifyPopup'
             }
         },
 
@@ -54,7 +55,7 @@ define([
                 }
 
                 if (this._isVisibleTop && this._isVisibleBottom) {
-                    this.$('.component-widget').off('inview');
+                    this.$('.component__widget').off('inview');
                     //this.setCompletionStatus();
                     this.completePopup();
                 }
@@ -64,7 +65,7 @@ define([
 
         remove: function() {
           // Remove any 'inview' listener attached.
-          this.$('.component-widget').off('inview');
+          this.$('.component__widget').off('inview');
 
           ComponentView.prototype.remove.apply(this, arguments);
         },
@@ -72,11 +73,11 @@ define([
         postRender: function() {
             this.setUpColumns();
 
-            this.$('.notify-imagegrid-widget').imageready(_.bind(function() {
+            this.$('.notify-imagegrid__widget').imageready(_.bind(function() {
                 this.setReadyStatus();
 
                 // Bind 'inview' once the image is ready.
-                this.$('.component-widget').on('inview', _.bind(this.inview, this));
+                this.$('.component__widget').on('inview', _.bind(this.inview, this));
 
             }, this));
 
@@ -147,5 +148,12 @@ define([
         template: "notify-imagegrid"
     });
 
-    return Adapt.register("notify-imagegrid", Notifyimagegrid);
+    //return Adapt.register("notify-imagegrid", Notifyimagegrid);
+    Adapt.register('notify-imagegrid', {
+      model: ComponentModel.extend({}), // register the model, it should be an extension of ComponentModel, an empty extension is fine
+      view: Notifyimagegrid
+    });
+
+    return Notifyimagegrid;
+    
 });
