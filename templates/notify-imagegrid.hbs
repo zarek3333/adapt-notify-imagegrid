@@ -37,7 +37,7 @@
                                     $(this).addClass("click4count");
                                 }
                                 var $gridmsg = '{{{_graphic.gridmessage}}}';
-                                require('coreJS/adapt').trigger('notify:popup',{title:'{{{_graphic.title}}}',body:$gridmsg });return false;
+                                require('coreJS/adapt').notify.popup({title:'{{{_graphic.title}}}',body:$gridmsg });return false;
                             });
                         </script>
                         <div class="{{../_id}}-fbnotify a11y-ignore" aria-hidden="true" tabindex="-1" style="display:none;">[ Image Grid Notify Title ] = {{{_graphic.title}}}
