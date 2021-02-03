@@ -11,7 +11,7 @@
                     <div class="base notify-imagegrid-item-image">
                         {{#if _graphic.gridmessage}}
                             <button tabindex="0" aria-label="{{_graphic.alt}}">
-                                <img src="{{_graphic.src}}" class="img2click a11y-ignore" aria-hidden="true" tabindex="-1">
+                                <img src="{{_graphic.src}}" class="img2click a11y-ignore" alt="{{_graphic.alt}}" aria-hidden="true" tabindex="-1">
                             </button>
                         {{else}}
                             <img src="{{_graphic.src}}" tabindex="0" alt="{{#if _graphic.alt}} {{_graphic.alt}} {{/if}}{{#if _isVisited}} {{../_globals._accessibility._ariaLabels.visited}}.{{/if}}" />
